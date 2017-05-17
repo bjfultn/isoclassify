@@ -1,13 +1,17 @@
 import pdb
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import fnmatch
 import random
 from priors import *
 
 def plotinit():
-    fig1 = plt.figure('posteriors',figsize=(8,12))
-    fig2=plt.figure('hrd',figsize=(8,12))
+
+    matplotlib.rcParams['font.size'] = 10
+    
+    fig1 = plt.figure('posteriors',figsize=(8,16))
+    fig2 = plt.figure('hrd',figsize=(12,12))
 
     #plt.subplots_adjust(left=0.08, bottom=0.04, right=0.96, top=0.96, wspace=0.27, \
     #                    hspace=0.6)
@@ -16,14 +20,16 @@ def plotinit():
     #plt.show()
 
     fig1.set_tight_layout(True)
-    plt.draw()
-    plt.show()
+    fig2.set_tight_layout(True)
+    # plt.draw()
+    # plt.show()
     
 
     #plt.subplots_adjust(left=0.08, bottom=0.04, right=0.96, top=0.96, wspace=0.27, \
     #                    hspace=0.6)
     #plt.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.97, wspace=0.3, \
     #    hspace=0.5)
+
 
 def plotclear():
 #    raw_input(':')
@@ -34,7 +40,8 @@ def plotclear():
 
 #def plotposterior(x,y,res,err1,err2,avs,model,model_red,names,j,medav,stdav,grcol,ricol,grcole,ricole,Mg,Mge,ix,iy):
 def plotposterior(x,y,res,err1,err2,names,j,ix,iy):
-    fig = plt.figure(figsize=(8,12))
+    #fig = plt.figure(figsize=(8,12))
+    fig = plt.figure('posteriors')
     plt.subplot(len(names),2,ix)
     plt.plot(x,np.cumsum(y))
     plt.plot([res,res],[0,1],'r')

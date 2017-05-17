@@ -521,8 +521,6 @@ def classify(input,model,dustmodel=0,doplot=1,useav=0.):
         names=['teff','logg','feh','rad','mass','rho','lum','age','avs','dis']
         steps=[0.001,0.01,0.01,0.01,0.01,0.01,0.01,0.01,avstep,0.01]
         fixes=[0,1,1,0,0,1,1,0,1,0]
-
-    #pdb.set_trace()
                            
     if doplot:
             plotinit()
@@ -565,7 +563,7 @@ def classify(input,model,dustmodel=0,doplot=1,useav=0.):
 #                     ricole,0.,0.,ix,iy)
             plothrd(model,input,mabs,mabse,ix,iy)
 
-            plotclear()
+            #plotclear()
 
     #pdb.set_trace()
     return result
